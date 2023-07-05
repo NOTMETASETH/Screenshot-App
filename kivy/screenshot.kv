@@ -1,0 +1,37 @@
+<ScreenshotApp>:
+    orientation: 'vertical'
+    padding: '20dp'
+    spacing: '20dp'
+
+    TextInput:
+        id: save_location_input
+        hint_text: 'Save location'
+        text: root.save_location
+        multiline: False
+        on_text_validate: root.save_location = self.text
+
+    Button:
+        text: 'Browse'
+        on_release: root.browse()
+        size_hint_y: None
+        height: '48dp'
+
+    TextInput:
+        id: file_name_input
+        hint_text: 'File name'
+        text: root.file_name
+        multiline: False
+        on_text_validate: root.file_name = self.text
+
+    TextInput:
+        id: delay_input
+        hint_text: 'Delay (s)'
+        text: root.delay
+        multiline: False
+        on_text_validate: root.delay = self.text
+
+    Button:
+        text: 'Take screenshot'
+        on_release: root.screenshot()
+        size_hint_y: None
+        height: '48dp'
